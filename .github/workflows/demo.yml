@@ -1,0 +1,9 @@
+name: My First Pipeline
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Welcome
+        run: echo "Welcome to GitHub Actions"
