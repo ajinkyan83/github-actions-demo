@@ -41,7 +41,7 @@ jobs:
 
     # 2. Initialize the CodeQL runner for Python
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
+      uses: github/codeql-action/init@v4
       with:
         languages: 'python'
 
@@ -49,4 +49,4 @@ jobs:
 
     # 3. Execute the analysis engine
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+      uses: github/codeql-action/analyze@v4
