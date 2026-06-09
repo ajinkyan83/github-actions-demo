@@ -1,5 +1,5 @@
 import os
-import requests
+# import requests
 
 api_key = os.getenv("API_KEY")
 
@@ -12,11 +12,11 @@ headers = {
     "Authorization": f"Bearer {api_key}"
 }
 
-print("Connecting to API...")
+print("Connecting to API..." + API_URL)
 
-response = requests.get(API_URL+"user/repo/posts/1", headers=headers)
+# response = requests.get(API_URL+"user/repo/posts/1", headers=headers)
 
-print (response.json())
+# print (response.json())
 
 # import sqlite3, boto3
 
