@@ -15,5 +15,7 @@ jobs:
           python-version: "3.12"
       - name: Verify Python
         run: python --version
+      - name: Install dependencies
+        run: pip install -r requirements.txt
       - name: Run Application
-        run: python app.py
+        run: python app.py  

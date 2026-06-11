@@ -1,11 +1,18 @@
 import os
 # import requests
 
-api_key = os.getenv("API_KEY")
+# import sqlite3, boto3
+
+user_input = input()
+
+query = "SELECT * FROM users WHERE id=" + user_input
+
+print(query)
+
+api_key = "ADAGGSG#$T#R#"
 
 API_URL = "https://my-json-server.typicode.com/"
 
-print("API KEY from env")
 print (api_key)
 
 headers = {
@@ -21,13 +28,6 @@ print("Connecting to API..." + API_URL)
 # raise an error if executed.
 # print (response.json())
 
-# import sqlite3, boto3
-
-# user_input = input()
-
-# query = "SELECT * FROM users WHERE id=" + user_input
-
-# print(query)
 
 # # github-actions-demo
 
