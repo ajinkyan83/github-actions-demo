@@ -1,5 +1,5 @@
 import os
-# import requests
+import requests
 
 api_key = os.getenv("API_KEY")
 

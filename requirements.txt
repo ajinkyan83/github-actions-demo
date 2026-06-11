@@ -1,4 +1,2 @@
-flask
-requests
-boto3
-sqlite3
+flask==1.0
+requests==2.19.0

@@ -1,0 +1,13 @@
+name: Trivy Dependency Scan
+on:
+    push:
+jobs:
+    trivy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - run: docker build -t trivy-demo:v1 .
+            - uses: aquasecurity/trivy-action@master
+              with:
+                image-ref: trivy-demo:v1
+                format: 'table'
