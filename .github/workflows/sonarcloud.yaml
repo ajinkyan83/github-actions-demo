@@ -1,0 +1,23 @@
+name: SonarCloud Scan 
+on: 
+    push: # Trigger the workflow on push to the main and develop branch
+        branches: 
+            - develop # Trigger the workflow on push to any branch starting with develop
+            - main # Trigger the workflow on push to any branch starting with main
+            - master
+    pull_request: # Trigger the workflow on pull request to the main and develop branch
+        branches:
+            - develop # Trigger the workflow on pull request to any branch starting with develop
+            - ftr/* # Trigger the workflow on pull request to any branch starting with ftr/*
+            - release/* # Trigger the workflow on pull request to any branch starting with release/*
+            - master
+    workflow_dispatch: # Allow manual triggering of the workflow from the GitHub Actions tab
+jobs: 
+    sonar: # Define a job named "sonar"
+        runs-on: ubuntu-latest 
+        steps:
+        - uses: actions/checkout@v4  # Check out the code from the repository
+        - name: SonarCloud Scan # Run the SonarCloud scan using the SonarSource GitHub Action
+          uses: SonarSource/sonarqube-scan-action@master 
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
