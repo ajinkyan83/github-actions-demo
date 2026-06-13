@@ -1,0 +1,27 @@
+name: My First Pipeline
+on:
+  push:
+    branches: # Trigger the workflow on push to the main branch
+      - release/* # Trigger the workflow on push to any branch starting with "release/"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Welcome
+        run: echo "Welcome to my first pipeline"
+      - name: Build
+        run: echo "Building the project..." 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo "Running tests..."
+      - name: Test Results
+        run: echo "Tests completed successfully."
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo "Deploying the application..."

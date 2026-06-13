@@ -1,0 +1,32 @@
+name: My First Pipeline
+on:
+  push:
+    branches: # Trigger the workflow on push to the main branch
+      - feature/* # Trigger the workflow on push to any branch starting with "feature/"
+  pull_request:
+    branches: # Trigger the workflow on pull request to the main branch
+      - develop # Trigger the workflow on pull request to any branch starting with develop
+      - main # Trigger the workflow on pull request to any branch starting with main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Welcome
+        run: echo "Welcome to my first pipeline"
+      - name: Build
+        run: echo "Building the project..." 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo "Running tests..."
+      - name: Test Results
+        run: echo "Tests completed successfully."
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo "Deploying the application..."
